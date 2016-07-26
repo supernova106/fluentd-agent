@@ -35,8 +35,7 @@ RUN gem install fluentd
 RUN gem install -V fluent-plugin-s3 \
         fluent-plugin-kinesis \
         fluent-plugin-aws-elasticsearch-service \
-        fluent-plugin-elasticsearch \
-	fluent-plugin-influxdb
+        fluent-plugin-elasticsearch
 
 COPY fluent.conf /fluentd/etc/fluent.conf
 
@@ -46,4 +45,5 @@ ENV FLUENTD_OPT=""
 ENV FLUENTD_CONF="fluent.conf"
 
 EXPOSE 24224
-CMD fluentd -c /fluentd/etc/$FLUENTD_CONF -p /fluentd/plugins $FLUENTD_OPT
+#CMD fluentd -c /fluentd/etc/$FLUENTD_CONF -p /fluentd/plugins $FLUENTD_OPT
+ENTRYPOINT ["fluentd"]
