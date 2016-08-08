@@ -36,7 +36,8 @@ RUN gem install -V fluent-plugin-s3 \
         fluent-plugin-kinesis \
         fluent-plugin-aws-elasticsearch-service \
         fluent-plugin-elasticsearch \
-	fluent-plugin-influxdb
+	fluent-plugin-influxdb \
+	fluent-plugin-mongo
 
 COPY fluent.conf /fluentd/etc/fluent.conf
 
